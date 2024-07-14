@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taha Zolfi</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'open sans';
+    
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);  /* No background */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b0b0b0;  /* Light grey color */
+    border-radius: 10px;
+    border: 2px solid transparent;  /* Space around thumb */
+    background-clip: content-box;  /* Adjust thumb size */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #909090;  /* Darker grey on hover */
+}
+
+/* Custom scrollbar styles for Firefox */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #b0b0b0 transparent;  /* Thumb color, no track color */
+}
+
+
+.nav { position: fixed;
+
+    width: 100%;
+    background: rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid #9ba3b446;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    border-end-end-radius: 15px;
+    border-end-start-radius: 15px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.055);
+  }
+  .nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-end-end-radius: 15px;
+    border-end-start-radius: 15px;
+    transition: opacity 0.5s ease; /* Add this line for smooth transition */
+}
+
+.nav.hidden {
+    opacity: 0; /* Hidden state */
+}
+
+
+  .nav ul li {
+    display: inline-block;
+    padding: 0.7rem;
+  }
+  
+  .nav ul li a {
+    font-family:  'arial';
+    font-weight: 100;
+    font-size: 30px;
+    /* color: white; */
+    padding: 19px 16px;
+    cursor: pointer;
+    
+  }
+  li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #ffffff71;
+    bottom: 15px;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+  
+li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+li a{position: relative;color: #e9eaeb81;}
+li a:hover{color: #e9eaeb;}
+
+.next {
+    height: 70vh;
+    background-color: #0e0e0e;
+  color: #e9eaeb;
+
+    
+}
+h1 {
+    font-size: 5vw;
+   font-weight: 900;
+   padding-bottom: 2rem;
+   padding-top: 2rem;
+   text-align: center;
+
+}
+
+.next p {
+    padding: 2rem;
+width: 50vw;
+font-weight: 600;
+font-size: larger;
+text-align: center;
+line-height: 1.4;
+color: #9ba3b4;
+}
+.third {
+    height: 60vh;
+    background-color: #0e0e0e;
+    color: #e9eaeb;
+    filter: drop-shadow(0 5px 10px #ff00bb00);
+}
+
+
+.swiper-slide a img {
+  border-radius: 15px;
+  width: 20vw;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    display: flex;
+    justify-content: space-around;
+    /* filter: drop-shadow(0 5px 10px #ff00bb2d); */
+
+}
+/* Swiper pagination bullets */
+.swiper-pagination-bullet {
+    background: #e9eaeb;
+
+}
+
+/* Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #e9eaeb;
+    
+
+}
+.swiper-container::before,
+.swiper-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15%; /* Adjust the width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with interactions */
+    z-index: 2; /* Ensure it appears above the slides */
+}
+
+.swiper-container::before {
+    left: 0;
+    background: linear-gradient(to right, #0e0e0e, transparent);
+}
+
+.swiper-container::after {
+    right: 0;
+    background: linear-gradient(to left, #0e0e0e, transparent);
+}
+
+.c1 {
+  filter: drop-shadow(0 1px 15px #00ccff11);
+}
+.c2 {
+  filter: drop-shadow(0 1px 15px #ff009d18);
+}
+.c3 {
+  filter: drop-shadow(0 1px 15px #00ff5518);
+}
+
+.fourth {
+    height: 70vh;
+    background-color:#0e0e0e;
+    color:#e9eaeb;
+    
+}
+.fourth img {
+  width: 5vw;
+
+  margin :2rem;
+}
+
+.swiper-container-fourth {
+    width: 100%;
+    height: 100%;
+}
+.m {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.fifth {
+  color: white;
+  background-color: #000000;
+}
+.id {
+
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 25%;
+  padding: 1rem;
+  margin: 0.5rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  
+}
+.id h3{font-weight: 100;}
+.id img {
+  width: 3vw; 
+  padding-right: 1.5rem;
+}
+.left {
+  padding: 2rem;
+}
+
+.c h1 {
+    display: inline-block;
+    position: relative;
+    padding: 1rem 2rem; /* Adjust padding for better spacing */
+    color: #e9eaeb;
+    z-index: 1;
+    font-size: 5vw; /* Adjust font size as needed */
+    text-align: center; /* Center text */
+}
+
+.c h1::before {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+  width: 100%;
+  height: 4px;
+  z-index: -1;
+    left: 0;
+    right: 0;
+    background: #0091ff; /* Blue color with some transparency */
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.c h1:hover::before {
+    height: 100%; /* Height on hover */
+    bottom: 0;
+    filter: drop-shadow(0 0 15px #0091ff);
+
+}
+
+.c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+strong {
+  color: #0091ff;
+}
+
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <div class="nav" id="blur">
+        <a href="/fa"><div class="fa" style="display: flex;align-items: center;padding: 1rem;"><img src="concept/iran.png"></div></a>
+        <ul>
+          <li><a class="last">HOME</a></li>
+          <!-- <li><a class="last">|</a></li> -->
+          <li><a class="last">ABOUT ME</a></li>
+          <!-- <li><a class="last">|</a></li> -->
+          <li><a class="last">PROJECTS</a></li>
+          <!-- <li><a class="last">|</a></li> -->
+          <li><a class="last">CONTACT</a></li>
+        </ul>
+        
+      </div>
+    <div id="canvas-container"></div>
+
+    <div class="next c">
+       <h1 id="high">WHO AM I ?</h1>
+       <p>Hello! I am an 18-year-old developer and graphic designer from iran with a passion for  graphic design and programming. My journey in the <strong>creative world</strong> began at the age of 9 when I started exploring graphic design. Over the years, I have honed my skills and developed a deep understanding of visual aesthetics and design principles. In the summer of 2022, I embarked on a new adventure into the world of programming.
+
+        Today, I am a full-stack web developer and a senior graphic designer. My expertise spans both front-end and back-end development, allowing me to build seamless and dynamic web applications. Additionally, my background in graphic design enables me to create visually appealing and user-friendly interfaces.
+        
+        I am always eager to learn and stay updated with the latest trends and technologies in both fields. My goal is to combine my skills in design and programming to create innovative and impactful digital experiences.</p>
+    </div>
+<div class="third">
+  <h1>PROJECTS</h1>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><a href="#"><img class="c1" src="card1.jpg"></a></div>
+      <div class="swiper-slide"><a href="#"><img class="c2" src="card2.jpg"></a></div>
+      <div class="swiper-slide"><a href="#"><img class="c1" src="card3.jpg"></a></div>
+      <div class="swiper-slide"><a href="#"><img class="c1" src="card4.jpg"></a></div>
+      <div class="swiper-slide"><a href="#"><img class="c3" src="card5.jpg"></a></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<div class="fourth">
+  <h1>SKILLS</h1>
+
+        <div class="m">
+          <img src="imgs/l1.png" alt="Skill 1">
+          <img src="imgs/l2.png" alt="Skill 2">
+          <img src="imgs/l3.png" alt="Skill 3">
+          <img src="imgs/l4.png" alt="Skill 4">
+          <img src="imgs/l5.png" alt="Skill 5">
+          <img src="imgs/l6.png" alt="Skill 6">
+          <img src="imgs/l7.png" alt="Skill 7">
+          <img src="imgs/l8.png" alt="Skill 8">
+          <img src="imgs/l9.png" alt="Skill 9">
+          <img src="imgs/l10.png" alt="Skill 10">
+          <img src="imgs/l11.png" alt="Skill 11">
+        </div>
+</div>
+
+<div class="fifth">
+  <h1>CONTACT ME</h1>
+
+    <div class="right"></div>
+    <div class="left">
+      <div class="id">
+        <img src="imgs/ig.png">
+        <h3>021gorb</h3>
+      </div>
+      <div class="id">
+        <img src="imgs/tl.png">
+        <h3>Dr_coode</h3>
+      </div>
+      <div class="id">
+        <img src="imgs/em.png">
+        <h3>TahaZolfi01@gmail.com</h3>
+      </div>
+      <div class="id">
+        <img src="imgs/ph.png">
+        <h3>+989906648574</h3>
+      </div>
+    </div>
+</div>
+    
+    <script>
+        // Initialize scene, camera, and renderer
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById("canvas-container").appendChild(renderer.domElement);
+
+// Add particle background
+const particlesGeometry = new THREE.BufferGeometry();
+const particlesCount = 20000;
+const positions = new Float32Array(particlesCount * 3);
+
+for (let i = 0; i < particlesCount * 3; i++) {
+  positions[i] = (Math.random() - 0.5) * 100;
+}
+
+particlesGeometry.setAttribute(
+  "position",
+  new THREE.BufferAttribute(positions, 3)
+);
+const particlesMaterial = new THREE.PointsMaterial({
+  color: "#0091ff",
+  size: 0.1,
+  transparent: true,
+  opacity: 0.7,
+}); // Pink color
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particles);
+
+// Add lighting
+const light = new THREE.PointLight(0xffffff, 1, 1000);
+light.position.set(10, 10, 10);
+scene.add(light);
+
+let textMesh, secondaryTextMesh;
+
+// Load Spike font
+const spikeLoader = new THREE.FontLoader();
+spikeLoader.load("spike.json", function (spikeFont) {
+  const textSize = window.innerWidth < 600 ? 0.5 : 1; // Adjust text size for mobile devices
+
+  // Determine text content based on window width
+  const textContent = window.innerWidth < 600 ? "TAHA\nZOLFI" : "TAHA ZOLFI";
+
+  // Create text geometry with Spike font
+  const textGeometry = new THREE.TextGeometry(textContent, {
+    font: spikeFont, // Use Spike font here
+    size: textSize,
+    height: 0.2,
+    curveSegments: 12,
+    bevelEnabled: true,
+    bevelThickness: 0.03,
+    bevelSize: 0.02,
+    bevelOffset: 0,
+    bevelSegments: 5,
+  });
+  textGeometry.computeBoundingBox();
+  const centerOffset =
+    -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
+
+  const textMaterial = new THREE.MeshStandardMaterial({
+    color: 0x0091ff,
+    transparent: true,
+  });
+  textMesh = new THREE.Mesh(textGeometry, textMaterial);
+
+  // Adjust position for mobile layout
+  if (window.innerWidth < 600) {
+    const lineHeight = textSize * 1.5;
+    textMesh.position.set(centerOffset, lineHeight / 0.8, 0);
+  } else {
+    textMesh.position.set(centerOffset, 0, 0);
+  }
+
+  scene.add(textMesh);
+});
+
+// Load Arial font
+const arialLoader = new THREE.FontLoader();
+arialLoader.load("h.json", function (arialFont) {
+  const textSize = window.innerWidth < 600 ? 0.25 : 1; // Adjust text size for mobile devices
+
+  // Create secondary text geometry with Arial font
+  const secondaryTextGeometry = new THREE.TextGeometry(
+    "Fullstack Web Developer & Senior Graphic Designer",
+    {
+      font: arialFont, // Use Arial font here
+      size: textSize / 8, // Adjust size
+      height: 0,
+      curveSegments: 12,
+      bevelEnabled: true,
+      bevelThickness: 0.01,
+      bevelSize: 0.01,
+      bevelOffset: 0,
+      bevelSegments: 5,
+    }
+  );
+  secondaryTextGeometry.computeBoundingBox();
+  const secondaryCenterOffset =
+    -0.5 *
+    (secondaryTextGeometry.boundingBox.max.x -
+      secondaryTextGeometry.boundingBox.min.x);
+  const secondaryTextMaterial = new THREE.MeshStandardMaterial({
+    color: "white",
+  });
+  secondaryTextMesh = new THREE.Mesh(
+    secondaryTextGeometry,
+    secondaryTextMaterial
+  );
+
+  // Adjust position for mobile layout
+  if (window.innerWidth < 600) {
+    const lineHeight = textSize * 1.5;
+    secondaryTextMesh.position.set(secondaryCenterOffset, -lineHeight, 0); // Adjust y position
+  } else {
+    secondaryTextMesh.position.set(secondaryCenterOffset, -1, 0); // Adjust y position
+  }
+  scene.add(secondaryTextMesh);
+});
+
+// Set camera position
+camera.position.z = 5;
+
+// Mouse and touch movement interaction
+document.addEventListener("mousemove", onMouseMove, false);
+document.addEventListener("touchmove", onTouchMove, false);
+
+let mouseX = 0,
+  mouseY = 0;
+function onMouseMove(event) {
+  mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+  mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+}
+
+function onTouchMove(event) {
+  if (event.touches.length > 0) {
+    const touch = event.touches[0];
+    mouseX = (touch.clientX / window.innerWidth) * 2 - 1;
+    mouseY = -(touch.clientY / window.innerHeight) * 2 + 1;
+  }
+}
+
+// Scroll interaction
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+
+  if (textMesh) {
+    const newOpacity = Math.max(1 - scrollY / windowHeight, 0);
+    textMesh.material.opacity = newOpacity;
+    textMesh.position.y = (scrollY / windowHeight) * -5; // Adjust the multiplication factor as needed
+  }
+
+  if (secondaryTextMesh) {
+    const newOpacity = Math.max(1 - scrollY / windowHeight, 0);
+    secondaryTextMesh.material.opacity = newOpacity;
+    secondaryTextMesh.position.y = (scrollY / windowHeight) * -5 - 1.5; // Adjust the multiplication factor as needed
+  }
+});
+
+// Animation loop
+function animate() {
+  requestAnimationFrame(animate);
+
+  // Rotate particles
+  particles.rotation.y += 0.002;
+
+  camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05; // Reduce movement scale for more subtle effect
+  camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.05; // Reduce movement scale for more subtle effect
+  camera.lookAt(scene.position);
+  renderer.render(scene, camera);
+}
+
+animate();
+
+// Handle window resize
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.querySelector('.nav');
+            let lastScrollTop = 0;
+    
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    // Downscroll
+                    nav.classList.add('hidden');
+                } else {
+                    // Upscroll
+                    nav.classList.remove('hidden');
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+    
+    <script>
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 5, // Reduce this value to decrease space between slides
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 10 // Adjust as needed
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 15 // Adjust as needed
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 20 // Adjust as needed
+        }
+    }
+});
+
+var swiperFourth = new Swiper('.swiper-container-fourth', {
+    slidesPerView: 1,
+    spaceBetween: 5, // Reduce this value to decrease space between slides
+    loop: true,
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+    speed: 1100,
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 10 // Adjust as needed
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 15 // Adjust as needed
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 20 // Adjust as needed
+        }
+    }
+});
+
+    </script>
+    
+</body>
+</html>
