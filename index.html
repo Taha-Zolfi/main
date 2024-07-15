@@ -105,8 +105,8 @@ body {
     position: absolute;
     width: 100%;
     height: 2px;
-    border-radius: 4px;
-    background-color: #ffffff71;
+    border-radius: 114px;
+    background-color: #00ffa7;
     bottom: 15px;
     left: 0;
     transform-origin: right;
@@ -123,8 +123,26 @@ li a:hover{color: #e9eaeb;}
 
 .next {
     height: 70vh;
-    background-color: #0e0e0e;
-  color: #e9eaeb;
+
+  background:#0e0e0e;
+    color:#e9eaeb;
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+
+  background-image: linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+  background-size: var(--gap) var(--gap);
 
     
 }
@@ -148,9 +166,26 @@ color: #9ba3b4;
 }
 .third {
     height: 60vh;
-    background-color: #0e0e0e;
-    color: #e9eaeb;
     filter: drop-shadow(0 5px 10px #ff00bb00);
+    background:#0e0e0e;
+    color:#e9eaeb;
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+
+  background-image: linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+  background-size: var(--gap) var(--gap);
 }
 
 
@@ -216,13 +251,28 @@ color: #9ba3b4;
 
 .fourth {
     height: 70vh;
-    background-color:#0e0e0e;
+    background:#0e0e0e;
     color:#e9eaeb;
-    
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+
+  background-image: linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+  background-size: var(--gap) var(--gap);
 }
 .fourth img {
   width: 5vw;
-
   margin :2rem;
 }
 
@@ -268,6 +318,7 @@ color: #9ba3b4;
     z-index: 1;
     font-size: 5vw; /* Adjust font size as needed */
     text-align: center; /* Center text */
+    transition: all 0.3s ease-in-out;
 }
 
 .c h1::before {
@@ -279,15 +330,19 @@ color: #9ba3b4;
   z-index: -1;
     left: 0;
     right: 0;
-    background: #0091ff; /* Blue color with some transparency */
+    background: #00ffa7; /* Blue color with some transparency */
     border-radius: 15px;
     transition: all 0.3s ease-in-out;
 }
+.c h1:hover{
+  color: #0e0e0e;
+  -webkit-text-stroke: 3px #00ffa7;
+}
 
 .c h1:hover::before {
-    height: 100%; /* Height on hover */
+    height: 50%; /* Height on hover */
     bottom: 0;
-    filter: drop-shadow(0 0 15px #0091ff);
+    filter: drop-shadow(0 0 15px #00ffa7);
 
 }
 
@@ -299,8 +354,9 @@ color: #9ba3b4;
 
 }
 strong {
-  color: #0091ff;
+  color: #00ffa7;
 }
+
 
 
     </style>
@@ -369,7 +425,9 @@ strong {
 <div class="fifth">
   <h1>CONTACT ME</h1>
 
-    <div class="right"></div>
+    <div class="right">
+
+    </div>
     <div class="left">
       <div class="id">
         <img src="imgs/ig.png">
@@ -390,6 +448,7 @@ strong {
     </div>
 </div>
     
+
     <script>
         // Initialize scene, camera, and renderer
 const scene = new THREE.Scene();
@@ -417,7 +476,7 @@ particlesGeometry.setAttribute(
   new THREE.BufferAttribute(positions, 3)
 );
 const particlesMaterial = new THREE.PointsMaterial({
-  color: "#0091ff",
+  color: "#00ffa7",
   size: 0.1,
   transparent: true,
   opacity: 0.7,
@@ -457,7 +516,7 @@ spikeLoader.load("spike.json", function (spikeFont) {
     -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
 
   const textMaterial = new THREE.MeshStandardMaterial({
-    color: 0x0091ff,
+    color: 0x00ffa7,
     transparent: true,
   });
   textMesh = new THREE.Mesh(textGeometry, textMaterial);
@@ -653,6 +712,8 @@ var swiperFourth = new Swiper('.swiper-container-fourth', {
 });
 
     </script>
+
+    
     
 </body>
 </html>
