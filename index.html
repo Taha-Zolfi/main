@@ -7,6 +7,9 @@
     <title>Taha Zolfi</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <style>
         * {
@@ -119,7 +122,7 @@ li a:hover::before {
     transform-origin: left;
     transform: scaleX(1);
   }
-li a{position: relative;color: #e9eaeb81;}
+li a{position: relative;color: #e9eaeb81;text-decoration: none;}
 li a:hover{color: #e9eaeb;}
 
 .next {
@@ -358,7 +361,12 @@ strong {
   color: #00ffa7;
 }
 
-
+.typing {
+            white-space: pre;
+            border-right: 2px solid black;
+            display: inline;
+            overflow: hidden;
+        }
 
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -368,35 +376,40 @@ strong {
     <div class="nav" id="blur">
         <a href="/fa"><div class="fa" style="display: flex;align-items: center;padding: 1rem;"><img src="iran.png"></div></a>
         <ul>
-          <li><a class="last">HOME</a></li>
-          <!-- <li><a class="last">|</a></li> -->
-          <li><a class="last">ABOUT ME</a></li>
-          <!-- <li><a class="last">|</a></li> -->
-          <li><a class="last">PROJECTS</a></li>
-          <!-- <li><a class="last">|</a></li> -->
-          <li><a class="last">CONTACT</a></li>
+          <li><a class="last" href="#canvas-container">HOME</a></li>
+
+          <li><a class="last" href="#next">ABOUT ME</a></li>
+
+          <li><a class="last" href="#third">PROJECTS</a></li>
+
+          <li><a class="last" href="#fourth">SKILLS</a></li>
+
+          <li><a class="last" href="#fifth">CONTACT</a></li>
         </ul>
         
       </div>
     <div id="canvas-container"></div>
-
-    <div class="next c">
+<script>
+  AOS.init();
+</script>
+    <div id="next" class="next c" >
        <h1 id="high">WHO AM I ?</h1>
-       <p>Hello! I am an 18-year-old developer and graphic designer from iran with a passion for  graphic design and programming. My journey in the <strong>creative world</strong> began at the age of 9 when I started exploring graphic design. Over the years, I have honed my skills and developed a deep understanding of visual aesthetics and design principles. In the summer of 2022, I embarked on a new adventure into the world of programming.
+       <p data-aos="fade-up" data-aos-duration="2000">Hello! I am an 18-year-old developer and graphic designer from iran with a passion for  graphic design and programming. My journey in the <strong>creative world</strong> began at the age of 9 when I started exploring graphic design. Over the years, I have honed my skills and developed a deep understanding of visual aesthetics and design principles. In the summer of 2022, I embarked on a new adventure into the world of programming.
 
         Today, I am a full-stack web developer and a senior graphic designer. My expertise spans both front-end and back-end development, allowing me to build seamless and dynamic web applications. Additionally, my background in graphic design enables me to create visually appealing and user-friendly interfaces.
         
         I am always eager to learn and stay updated with the latest trends and technologies in both fields. My goal is to combine my skills in design and programming to create innovative and impactful digital experiences.</p>
     </div>
-<div class="third">
+
+<div class="third " id="third">
   <h1>PROJECTS</h1>
-  <div class="swiper-container">
+  <div class="swiper-container ">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><a href="#"><img class="c1" src="card1.jpg"></a></div>
-      <div class="swiper-slide"><a href="#"><img class="c2" src="card2.jpg"></a></div>
-      <div class="swiper-slide"><a href="#"><img class="c1" src="card3.jpg"></a></div>
-      <div class="swiper-slide"><a href="#"><img class="c1" src="card4.jpg"></a></div>
-      <div class="swiper-slide"><a href="#"><img class="c3" src="card5.jpg"></a></div>
+      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c1" src="card1.jpg"></a></div>
+      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c2" src="card2.jpg"></a></div>
+      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c1" src="card3.jpg"></a></div>
+      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c1" src="card4.jpg"></a></div>
+      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c3" src="card5.jpg"></a></div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
@@ -405,25 +418,62 @@ strong {
     <div class="swiper-button-prev"></div>
   </div>
 </div>
-<div class="fourth">
+
+
+<div class="fourth" id="fourth">
   <h1>SKILLS</h1>
 
         <div class="m">
-          <img src="imgs/l1.png" alt="Skill 1">
-          <img src="imgs/l2.png" alt="Skill 2">
-          <img src="imgs/l3.png" alt="Skill 3">
-          <img src="imgs/l4.png" alt="Skill 4">
-          <img src="imgs/l5.png" alt="Skill 5">
-          <img src="imgs/l6.png" alt="Skill 6">
-          <img src="imgs/l7.png" alt="Skill 7">
-          <img src="imgs/l8.png" alt="Skill 8">
-          <img src="imgs/l9.png" alt="Skill 9">
-          <img src="imgs/l10.png" alt="Skill 10">
-          <img src="imgs/l11.png" alt="Skill 11">
+          <img src="imgs/l1.png"  class="hid" alt="Skill 1">
+          <img src="imgs/l2.png"  class="hid" alt="Skill 2">
+          <img src="imgs/l3.png"  class="hid" alt="Skill 3">
+          <img src="imgs/l4.png"  class="hid" alt="Skill 4">
+          <img src="imgs/l5.png"  class="hid" alt="Skill 5">
+          <img src="imgs/l6.png"  class="hid" alt="Skill 6">
+          <img src="imgs/l7.png"  class="hid" alt="Skill 7">
+          <img src="imgs/l8.png"  class="hid" alt="Skill 8">
+          <img src="imgs/l9.png"  class="hid" alt="Skill 9">
+          <img src="imgs/l10.png" class="hid" alt="Skill 10">
+          <img src="imgs/l11.png" class="hid" alt="Skill 11">
         </div>
 </div>
+<style>
+  .hid {
+    opacity: 0;
+    transform: translate3d(20px , 20px , 20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
-<div class="fifth">
+.vis {
+    opacity: 1;
+    transform: translate3d(0 ,0 ,0);
+}
+
+</style>
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.m .hid');
+
+    function checkVisibility() {
+        const windowHeight = window.innerHeight;
+        images.forEach((image, index) => {
+            const rect = image.getBoundingClientRect();
+            if (rect.top <= windowHeight - 100) { // 100 پیکسل آفست
+                setTimeout(() => {
+                    image.classList.add('vis');
+                }, (index + 1) * 100); // هر عکس با تاخیر 1 ثانیه‌ای ظاهر می‌شود
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', checkVisibility);
+    checkVisibility(); // بررسی اولیه هنگام بارگذاری صفحه
+});
+
+   </script> 
+    
+<div class="fifth" id="fifth">
   <h1>CONTACT ME</h1>
 
     <div class="right">
@@ -714,7 +764,7 @@ var swiperFourth = new Swiper('.swiper-container-fourth', {
 
     </script>
 
-    
-    
+
+
 </body>
 </html>
