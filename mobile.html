@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fody Slider</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <STYle>
+
+html {
+  font-size: 62.5%;
+
+}
+
+@media (min-width: 1440px) {
+  .container {
+    zoom: 1.5;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    zoom: 1.7;
+  }
+}
+
+@media (min-width: 3860px) {
+  .container {
+    zoom: 2.5;
+  }
+}
+
+.container {
+  max-width: 124rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+
+
+@media (max-width:500px) {
+  #tranding .tranding-slider {
+    height: 45rem;
+  }
+}
+
+.tranding-slide {
+  width: 37rem;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  .tranding-slide {
+    width: 28rem !important;
+
+  }
+  .tranding-slide .tranding-slide-img img {
+    width: 28rem !important;
+
+  }
+}
+
+.tranding-slide .tranding-slide-img img {
+  width: 37rem;
+  /* height: 42rem; */
+  border-radius: 2rem;
+
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+
+    </STYle>
+  </head>
+
+  <body>
+
+      <div class="container">
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper">
+
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="card1.jpg" >
+              </div>
+            </div>
+            <!-- Slide-end -->
+                         <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="card2.jpg" >
+              </div>
+            </div>
+            <!-- Slide-end -->
+                         <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="card3.jpg" >
+              </div>
+            </div>
+            <!-- Slide-end -->
+                         <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="card4.jpg" >
+              </div>
+            </div>
+            <!-- Slide-end -->
+                         <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="card5.jpg" >
+              </div>
+            </div>
+            <!-- Slide-end -->
+
+          </div>
+      </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var TrandingSlider = new Swiper('.tranding-slider', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: 'auto',
+  
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
+    </script>
+  </body>
+
+</html>

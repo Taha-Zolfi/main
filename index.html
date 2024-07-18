@@ -23,9 +23,10 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-family: 'open sans';
+    background-color: black;
     
 }
-html {
+html , body  {
   scroll-behavior: smooth;
 }
 
@@ -39,22 +40,20 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #b0b0b0;  /* Light grey color */
+    background: #00ffa7;  /* Light grey color */
     border-radius: 10px;
     border: 2px solid transparent;  /* Space around thumb */
     background-clip: content-box;  /* Adjust thumb size */
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: #909090;  /* Darker grey on hover */
-}
+
 
 /* Custom scrollbar styles for Firefox */
 body {
     scrollbar-width: thin;
     scrollbar-color: #b0b0b0 transparent;  /* Thumb color, no track color */
 }
-
+a { text-decoration: none;}
 
 .nav { position: fixed;
 
@@ -169,7 +168,7 @@ line-height: 1.4;
 color: #9ba3b4;
 }
 .third {
-    height: 60vh;
+    height: auto;
     filter: drop-shadow(0 5px 10px #ff00bb00);
     background:#0e0e0e;
     color:#e9eaeb;
@@ -192,56 +191,6 @@ color: #9ba3b4;
   background-size: var(--gap) var(--gap);
 }
 
-
-.swiper-slide a img {
-  border-radius: 15px;
-  width: 20vw;
-}
-
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-wrapper {
-    display: flex;
-    justify-content: space-around;
-    /* filter: drop-shadow(0 5px 10px #ff00bb2d); */
-
-}
-/* Swiper pagination bullets */
-.swiper-pagination-bullet {
-    background: #e9eaeb;
-
-}
-
-/* Swiper navigation buttons */
-.swiper-button-next,
-.swiper-button-prev {
-    color: #e9eaeb;
-    
-
-}
-.swiper-container::before,
-.swiper-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 15%; /* Adjust the width as needed */
-    pointer-events: none; /* Ensure it doesn't interfere with interactions */
-    z-index: 2; /* Ensure it appears above the slides */
-}
-
-.swiper-container::before {
-    left: 0;
-    background: linear-gradient(to right, #0e0e0e, transparent);
-}
-
-.swiper-container::after {
-    right: 0;
-    background: linear-gradient(to left, #0e0e0e, transparent);
-}
 
 .c1 {
   filter: drop-shadow(0 1px 15px #00ccff11);
@@ -276,14 +225,10 @@ color: #9ba3b4;
   background-size: var(--gap) var(--gap);
 }
 .fourth img {
-  width: 5vw;
+  width: 4vw;
   margin :2rem;
 }
 
-.swiper-container-fourth {
-    width: 100%;
-    height: 100%;
-}
 .m {
   display: flex;
   justify-content: center;
@@ -293,26 +238,6 @@ color: #9ba3b4;
   color: white;
   background-color: #000000;
 }
-.id {
-
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  width: 25%;
-  padding: 1rem;
-  margin: 0.5rem;
-  color: #ffffff;
-  font-size: 1.5rem;
-  
-}
-.id h3{font-weight: 100;}
-.id img {
-  width: 3vw; 
-  padding-right: 1.5rem;
-}
-.left {
-  padding: 2rem;
-}
 
 .c h1 {
     display: inline-block;
@@ -320,8 +245,8 @@ color: #9ba3b4;
     padding: 1rem 2rem; /* Adjust padding for better spacing */
     color: #e9eaeb;
     z-index: 1;
-    font-size: 5vw; /* Adjust font size as needed */
-    text-align: center; /* Center text */
+    font-size: 5vw;
+    text-align: center;
     transition: all 0.3s ease-in-out;
 }
 
@@ -361,12 +286,142 @@ strong {
   color: #00ffa7;
 }
 
-.typing {
-            white-space: pre;
-            border-right: 2px solid black;
-            display: inline;
-            overflow: hidden;
-        }
+
+.swiper img {
+  width: 20vw;
+  border-radius: 15px;
+}
+
+@media (orientation: portrait) {
+  .nav {
+    display: none;
+  }
+  .next p{
+    width: 90vw;
+  }
+  .next {
+    height: max-content;
+  }
+  .next h1 {
+    font-size: 8vw;
+  }
+  .c h1 {
+    display: inline-block;
+    position: relative;
+    padding: 1.5rem; /* Adjust padding for better spacing */
+    color: #e9eaeb;
+    z-index: 1;
+    font-size: 9vw; /* Adjust font size as needed */
+    text-align: center; /* Center text */
+    transition: all 0.3s ease-in-out;
+}
+
+.fourth {height: 50vh;}
+.c h1::before {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+  width: 100%;
+  height: 4px;
+  z-index: -1;
+    left: 0;
+    right: 0;
+    background: #00ffa7; /* Blue color with some transparency */
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.c h1:hover{
+  color: #0e0e0e;
+  -webkit-text-stroke: 1px #00ffa7;
+}
+
+.c h1:hover::before {
+    height: 50%; /* Height on hover */
+    bottom: 0;
+    filter: drop-shadow(0 0 15px #00ffa7);
+
+}
+
+
+  .fourth img {
+  width: 10vw;
+  margin :0.7rem;
+}
+
+
+  .swiper img {
+  width: 30vw;
+  border-radius: 8px;
+}
+#d {
+  display: none;
+}
+.m{
+  display: flex;
+  flex-direction: column;
+}
+
+.p1 {
+  display: flex;
+  justify-content: center;
+
+}
+
+}
+
+/* Float four columns side by side */
+.column {
+
+  width: 20%;
+  padding: 0 10px;
+}
+
+.row {margin: 15PX;display: flex;justify-content: center;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card img {
+  width: 5vw;
+  /* padding: 0.1rem; */
+}
+.card {
+  color: #e9eaeb;
+  padding: 25px;
+  text-align: center;
+  background-color: #0e0e0e;
+  border: solid 1px #00ffa7;
+  border-radius: 15px;
+  
+}
+.card h3 {color:#00ffa7;padding: 1rem;}
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .column h3 {display: none;}
+  .card {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+  }
+  .card img{
+    width: 10vw;
+    margin-right: 1rem;
+  }
+  h1 {font-size: 9vw;}
+}
+
 
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -393,7 +448,7 @@ strong {
   AOS.init();
 </script>
     <div id="next" class="next c" >
-       <h1 id="high">WHO AM I ?</h1>
+       <h1>WHO AM I ?</h1>
        <p data-aos="fade-up" data-aos-duration="2000">Hello! I am an 18-year-old developer and graphic designer from iran with a passion for  graphic design and programming. My journey in the <strong>creative world</strong> began at the age of 9 when I started exploring graphic design. Over the years, I have honed my skills and developed a deep understanding of visual aesthetics and design principles. In the summer of 2022, I embarked on a new adventure into the world of programming.
 
         Today, I am a full-stack web developer and a senior graphic designer. My expertise spans both front-end and back-end development, allowing me to build seamless and dynamic web applications. Additionally, my background in graphic design enables me to create visually appealing and user-friendly interfaces.
@@ -403,19 +458,20 @@ strong {
 
 <div class="third " id="third">
   <h1>PROJECTS</h1>
-  <div class="swiper-container ">
+  <div class="swiper">
+
     <div class="swiper-wrapper">
-      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c1" src="card1.jpg"></a></div>
-      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c2" src="card2.jpg"></a></div>
-      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c1" src="card3.jpg"></a></div>
-      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c1" src="card4.jpg"></a></div>
-      <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000"><a href="#"><img class="c3" src="card5.jpg"></a></div>
+
+      <div class="swiper-slide"><img src="card1.jpg"></div>
+      <div class="swiper-slide"><img src="card2.jpg"></div>
+      <div class="swiper-slide"><img src="card3.jpg"></div>
+      <div class="swiper-slide"><img src="card4.jpg"></div>
+      <div class="swiper-slide"><img src="card5.jpg"></div>
+      <div class="swiper-slide"><img src="card6.jpg"></div>
+      <div class="swiper-slide"><img src="card6.jpg"></div>
+
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+
   </div>
 </div>
 
@@ -423,85 +479,66 @@ strong {
 <div class="fourth" id="fourth">
   <h1>SKILLS</h1>
 
-        <div class="m">
-          <img src="imgs/l1.png"  class="hid" alt="Skill 1">
-          <img src="imgs/l2.png"  class="hid" alt="Skill 2">
-          <img src="imgs/l3.png"  class="hid" alt="Skill 3">
-          <img src="imgs/l4.png"  class="hid" alt="Skill 4">
-          <img src="imgs/l5.png"  class="hid" alt="Skill 5">
-          <img src="imgs/l6.png"  class="hid" alt="Skill 6">
-          <img src="imgs/l7.png"  class="hid" alt="Skill 7">
-          <img src="imgs/l8.png"  class="hid" alt="Skill 8">
-          <img src="imgs/l9.png"  class="hid" alt="Skill 9">
-          <img src="imgs/l10.png" class="hid" alt="Skill 10">
-          <img src="imgs/l11.png" class="hid" alt="Skill 11">
-        </div>
+  <div class="m">
+    <div class="p1">
+    <img src="imgs/l1.png" alt="Skill 1" data-aos="fade-up" data-aos-delay="100">
+    <img src="imgs/l2.png" alt="Skill 2" data-aos="fade-up" data-aos-delay="200">
+    <img src="imgs/l3.png" alt="Skill 3" data-aos="fade-up" data-aos-delay="300">
+    <img src="imgs/l4.png" alt="Skill 4" data-aos="fade-up" data-aos-delay="400">
+    <img src="imgs/l5.png" alt="Skill 5" data-aos="fade-up" data-aos-delay="500"></div><div class="p1">
+    <img src="imgs/l6.png" alt="Skill 6" data-aos="fade-up" data-aos-delay="600">
+    <img src="imgs/l7.png" alt="Skill 7" data-aos="fade-up" data-aos-delay="700">
+    <img src="imgs/l8.png" alt="Skill 8" data-aos="fade-up" data-aos-delay="800">
+    <img src="imgs/l9.png" alt="Skill 9" data-aos="fade-up" data-aos-delay="900">
+    <img src="imgs/l11.png" alt="Skill 11" id="d" data-aos="fade-up" data-aos-delay="1100">
+    <img src="imgs/l10.png" alt="Skill 10" data-aos="fade-up" data-aos-delay="1000">
+  </div>
 </div>
-<style>
-  .hid {
-    opacity: 0;
-    transform: translate3d(20px , 20px , 20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+</div>
 
-.vis {
-    opacity: 1;
-    transform: translate3d(0 ,0 ,0);
-}
-
-</style>
-   <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.m .hid');
-
-    function checkVisibility() {
-        const windowHeight = window.innerHeight;
-        images.forEach((image, index) => {
-            const rect = image.getBoundingClientRect();
-            if (rect.top <= windowHeight - 100) { // 100 پیکسل آفست
-                setTimeout(() => {
-                    image.classList.add('vis');
-                }, (index + 1) * 100); // هر عکس با تاخیر 1 ثانیه‌ای ظاهر می‌شود
-            }
-        });
-    }
-
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('resize', checkVisibility);
-    checkVisibility(); // بررسی اولیه هنگام بارگذاری صفحه
-});
-
-   </script> 
-    
 <div class="fifth" id="fifth">
   <h1>CONTACT ME</h1>
 
-    <div class="right">
 
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="imgs/igg.png">
+          <h3>Instagram</h3>
+          <p>021gorb</p>
+        </div>
+      </div>
+    
+      <div class="column">
+        <div class="card">
+          <img src="imgs/tl.png">
+          <h3>Telegram</h3>
+          <p>Dr_coode</p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card">
+          <img src="imgs/ph.png">
+          <h3>Number</h3>
+          <p>+989906648574</p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card">
+          <img src="imgs/emm.png">
+          <h3>Email</h3>
+          <p>tahazolfi01@gmail.com</p>
+        </div>
+      </div>
     </div>
-    <div class="left">
-      <div class="id">
-        <img src="imgs/ig.png">
-        <h3>021gorb</h3>
-      </div>
-      <div class="id">
-        <img src="imgs/tl.png">
-        <h3>Dr_coode</h3>
-      </div>
-      <div class="id">
-        <img src="imgs/em.png">
-        <h3>TahaZolfi01@gmail.com</h3>
-      </div>
-      <div class="id">
-        <img src="imgs/ph.png">
-        <h3>+989906648574</h3>
-      </div>
-    </div>
+
+
 </div>
     
 
     <script>
-        // Initialize scene, camera, and renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -513,9 +550,10 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("canvas-container").appendChild(renderer.domElement);
 
-// Add particle background
+// Adjust particle count based on screen size
+const isMobile = window.innerWidth < 600;
+const particlesCount = isMobile ? 5000 : 20000; // Lower particle count for mobile
 const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 20000;
 const positions = new Float32Array(particlesCount * 3);
 
 for (let i = 0; i < particlesCount * 3; i++) {
@@ -526,12 +564,14 @@ particlesGeometry.setAttribute(
   "position",
   new THREE.BufferAttribute(positions, 3)
 );
+
 const particlesMaterial = new THREE.PointsMaterial({
   color: "#00ffa7",
-  size: 0.1,
+  size: isMobile ? 0.05 : 0.1, // Adjust size for mobile
   transparent: true,
   opacity: 0.7,
-}); // Pink color
+});
+
 const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 scene.add(particles);
 
@@ -545,14 +585,14 @@ let textMesh, secondaryTextMesh;
 // Load Spike font
 const spikeLoader = new THREE.FontLoader();
 spikeLoader.load("spike.json", function (spikeFont) {
-  const textSize = window.innerWidth < 600 ? 0.5 : 1; // Adjust text size for mobile devices
+  const textSize = isMobile ? 0.8 : 1; // Adjust text size for mobile
 
   // Determine text content based on window width
-  const textContent = window.innerWidth < 600 ? "TAHA\nZOLFI" : "TAHA ZOLFI";
+  const textContent = isMobile ? "TAHA\nZOLFI" : "TAHA ZOLFI";
 
   // Create text geometry with Spike font
   const textGeometry = new THREE.TextGeometry(textContent, {
-    font: spikeFont, // Use Spike font here
+    font: spikeFont,
     size: textSize,
     height: 0.2,
     curveSegments: 12,
@@ -563,8 +603,7 @@ spikeLoader.load("spike.json", function (spikeFont) {
     bevelSegments: 5,
   });
   textGeometry.computeBoundingBox();
-  const centerOffset =
-    -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
+  const centerOffset = -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
 
   const textMaterial = new THREE.MeshStandardMaterial({
     color: 0x00ffa7,
@@ -573,8 +612,8 @@ spikeLoader.load("spike.json", function (spikeFont) {
   textMesh = new THREE.Mesh(textGeometry, textMaterial);
 
   // Adjust position for mobile layout
-  if (window.innerWidth < 600) {
-    const lineHeight = textSize * 1.5;
+  if (isMobile) {
+    const lineHeight = textSize * 1;
     textMesh.position.set(centerOffset, lineHeight / 0.8, 0);
   } else {
     textMesh.position.set(centerOffset, 0, 0);
@@ -586,13 +625,13 @@ spikeLoader.load("spike.json", function (spikeFont) {
 // Load Arial font
 const arialLoader = new THREE.FontLoader();
 arialLoader.load("h.json", function (arialFont) {
-  const textSize = window.innerWidth < 600 ? 0.25 : 1; // Adjust text size for mobile devices
+  const textSize = isMobile ? 1 : 1; // Adjust text size for mobile
 
   // Create secondary text geometry with Arial font
   const secondaryTextGeometry = new THREE.TextGeometry(
     "Fullstack Web Developer & Senior Graphic Designer",
     {
-      font: arialFont, // Use Arial font here
+      font: arialFont,
       size: textSize / 8, // Adjust size
       height: 0,
       curveSegments: 12,
@@ -604,20 +643,14 @@ arialLoader.load("h.json", function (arialFont) {
     }
   );
   secondaryTextGeometry.computeBoundingBox();
-  const secondaryCenterOffset =
-    -0.5 *
-    (secondaryTextGeometry.boundingBox.max.x -
-      secondaryTextGeometry.boundingBox.min.x);
+  const secondaryCenterOffset = -0.5 * (secondaryTextGeometry.boundingBox.max.x - secondaryTextGeometry.boundingBox.min.x);
   const secondaryTextMaterial = new THREE.MeshStandardMaterial({
     color: "white",
   });
-  secondaryTextMesh = new THREE.Mesh(
-    secondaryTextGeometry,
-    secondaryTextMaterial
-  );
+  secondaryTextMesh = new THREE.Mesh(secondaryTextGeometry, secondaryTextMaterial);
 
   // Adjust position for mobile layout
-  if (window.innerWidth < 600) {
+  if (isMobile) {
     const lineHeight = textSize * 1.5;
     secondaryTextMesh.position.set(secondaryCenterOffset, -lineHeight, 0); // Adjust y position
   } else {
@@ -627,7 +660,7 @@ arialLoader.load("h.json", function (arialFont) {
 });
 
 // Set camera position
-camera.position.z = 5;
+camera.position.z = isMobile ? 7 : 5; // Adjust camera position for mobile
 
 // Mouse and touch movement interaction
 document.addEventListener("mousemove", onMouseMove, false);
@@ -635,6 +668,7 @@ document.addEventListener("touchmove", onTouchMove, false);
 
 let mouseX = 0,
   mouseY = 0;
+
 function onMouseMove(event) {
   mouseX = (event.clientX / window.innerWidth) * 2 - 1;
   mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -652,7 +686,7 @@ function onTouchMove(event) {
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
   const windowHeight = window.innerHeight;
-
+  if (!isMobile){
   if (textMesh) {
     const newOpacity = Math.max(1 - scrollY / windowHeight, 0);
     textMesh.material.opacity = newOpacity;
@@ -663,7 +697,7 @@ window.addEventListener("scroll", () => {
     const newOpacity = Math.max(1 - scrollY / windowHeight, 0);
     secondaryTextMesh.material.opacity = newOpacity;
     secondaryTextMesh.position.y = (scrollY / windowHeight) * -5 - 1.5; // Adjust the multiplication factor as needed
-  }
+  }}
 });
 
 // Animation loop
@@ -681,11 +715,15 @@ function animate() {
 
 animate();
 
-// Handle window resize
+// Handle window resize with debounce
+let resizeTimeout;
 window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }, 200);
 });
 
     </script>
@@ -709,59 +747,36 @@ window.addEventListener("resize", () => {
     </script>
     
     <script>
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    spaceBetween: 5, // Reduce this value to decrease space between slides
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 10 // Adjust as needed
-        },
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 15 // Adjust as needed
-        },
-        1024: {
-            slidesPerView: 4,
-            spaceBetween: 20 // Adjust as needed
-        }
-    }
-});
+const swiper = new Swiper('.swiper', {
+  speed: 300,
+  spaceBetween: 100,
+  loop: true,
+  autoplay: {
+   delay: 1000,
+ },
 
-var swiperFourth = new Swiper('.swiper-container-fourth', {
-    slidesPerView: 1,
-    spaceBetween: 5, // Reduce this value to decrease space between slides
-    loop: true,
-    autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
+ grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 3,
+      spaceBetween: 20
     },
-    speed: 1100,
-    breakpoints: {
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 10 // Adjust as needed
-        },
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 15 // Adjust as needed
-        },
-        1024: {
-            slidesPerView: 4,
-            spaceBetween: 20 // Adjust as needed
-        }
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 40
     }
-});
+  }
 
+});
     </script>
 
 
