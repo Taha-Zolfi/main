@@ -64,7 +64,7 @@ a { text-decoration: none;}
     border-bottom: 1px solid #9ba3b446;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     border-end-end-radius: 15px;
     border-end-start-radius: 15px;
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.055);
@@ -78,7 +78,7 @@ a { text-decoration: none;}
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
     border-end-end-radius: 15px;
     border-end-start-radius: 15px;
     transition: opacity 0.5s ease; /* Add this line for smooth transition */
@@ -87,15 +87,16 @@ a { text-decoration: none;}
 .nav.hidden {
     opacity: 0; /* Hidden state */
 }
-
+.nav ul {display: flex;justify-content: center;align-items: center;}
 
   .nav ul li {
     display: inline-block;
-    padding: 0.7rem;
+    padding: 0.7rem 1.7rem;
+
   }
   
   .nav ul li a {
-    font-family:  'arial';
+
     font-weight: 100;
     font-size: 30px;
     /* color: white; */
@@ -429,7 +430,7 @@ strong {
 <body>
 
     <div class="nav" id="blur">
-        <a href="/fa"><div class="fa" style="display: flex;align-items: center;padding: 1rem;"><img src="iran.png"></div></a>
+
         <ul>
           <li><a class="last" href="#canvas-container">HOME</a></li>
 
@@ -462,13 +463,13 @@ strong {
 
     <div class="swiper-wrapper">
 
-      <div class="swiper-slide"><img src="card1.jpg"></div>
-      <div class="swiper-slide"><img src="card2.jpg"></div>
-      <div class="swiper-slide"><img src="card3.jpg"></div>
-      <div class="swiper-slide"><img src="card4.jpg"></div>
-      <div class="swiper-slide"><img src="card5.jpg"></div>
-      <div class="swiper-slide"><img src="card6.jpg"></div>
-      <div class="swiper-slide"><img src="card6.jpg"></div>
+      <div class="swiper-slide"><a href="https://github.com/Taha-Zolfi/melk-fa"><img src="card1.jpg"></div></a>
+      <div class="swiper-slide"><a href="https://github.com/Taha-Zolfi/mobogheymat"><img src="card2.jpg"></div></a>
+      <div class="swiper-slide"><a href="https://github.com/Taha-Zolfi/beharf"><img src="card3.jpg"></div></a>
+      <div class="swiper-slide"><a href="https://github.com/Taha-Zolfi/telegram-automation"><img src="card4.jpg"></div></a>
+      <div class="swiper-slide"><a href="https://github.com/Taha-Zolfi/site"><img src="card5.jpg"></div></a>
+      <div class="swiper-slide"><a href=""><img src="card6.jpg"></div></a>
+      <div class="swiper-slide"><a href=""><img src="card6.jpg"></div></a>
 
     </div>
 
@@ -502,35 +503,39 @@ strong {
 
     <div class="row">
       <div class="column">
+        <a href="https://instagram/021gorb">
         <div class="card">
           <img src="imgs/igg.png">
           <h3>Instagram</h3>
           <p>021gorb</p>
-        </div>
+        </div></a>
       </div>
     
       <div class="column">
+        <a href="https://t.me/Dr_coode">
         <div class="card">
           <img src="imgs/tl.png">
           <h3>Telegram</h3>
           <p>Dr_coode</p>
-        </div>
+        </div></a>
       </div>
       
       <div class="column">
+        <a href="tel:+989906648574">
         <div class="card">
           <img src="imgs/ph.png">
           <h3>Number</h3>
           <p>+989906648574</p>
-        </div>
+        </div></a>
       </div>
       
       <div class="column">
+        <a href="mailto:tahazolfi01@gmail.com">
         <div class="card">
           <img src="imgs/emm.png">
           <h3>Email</h3>
           <p>tahazolfi01@gmail.com</p>
-        </div>
+        </div></a>
       </div>
     </div>
 
