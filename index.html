@@ -557,7 +557,7 @@ document.getElementById("canvas-container").appendChild(renderer.domElement);
 
 // Adjust particle count based on screen size
 const isMobile = window.innerWidth < 600;
-const particlesCount = isMobile ? 5000 : 20000; // Lower particle count for mobile
+const particlesCount = isMobile ? 1000000 : 20000; // Lower particle count for mobile
 const particlesGeometry = new THREE.BufferGeometry();
 const positions = new Float32Array(particlesCount * 3);
 
